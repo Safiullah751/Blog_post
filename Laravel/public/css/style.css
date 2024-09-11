@@ -1,0 +1,752 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body{
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 4px 4px 8px #cbcbcb, 4px 4px 8px #ffffff;
+    height: 100vh;
+}
+.text {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    color: white;
+    font-family: "Poppins", sans-serif;
+    text-transform: uppercase;
+    font-size: 3em;
+    font-family: "Times New Roman", Times, serif;
+    animation: shake 0.5s ease-in-out infinite;
+    -webkit-animation: shake 0.5s ease-in-out infinite;
+}
+
+.up {
+    position: absolute;
+    top: 43%;
+    left: 30%;
+    animation: Up 6s infinite linear;
+    transition: all 16s ease;
+    -webkit-transition: all 16s ease;
+    -moz-transition: all 16s ease;
+    -ms-transition: all 16s ease;
+    -o-transition: all 16s ease;
+    -webkit-animation: Up 6s infinite linear;
+}
+
+.down {
+    position: absolute;
+    top: 60%;
+    left: 20%;
+    animation: down 6s infinite linear;
+    transition: all 16s ease;
+    -webkit-animation: down 6s infinite linear;
+    -webkit-transition: all 16s ease;
+    -moz-transition: all 16s ease;
+    -ms-transition: all 16s ease;
+    -o-transition: all 16s ease;
+}
+
+@keyframes Up {
+    0% {
+        right: 40%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 40%;
+    }
+
+    from {
+        color: black;
+    }
+
+    to {
+        color: green;
+    }
+}
+
+@keyframes down {
+    0% {
+        right: 0;
+    }
+    50% {
+        left: 60%;
+    }
+
+    100% {
+        left: 0;
+    }
+    from {
+        color: white;
+    }
+    to {
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .up {
+        display: none;
+    }
+    .down {
+        display: none;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+}
+
+.navbar {
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 4px 4px 8px #cbcbcb, 4px -4px 8px #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+    z-index: 1000;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand .logo {
+    color: black;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 1.8em;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    color: black;
+    margin: 4px 0;
+    transition: 0.3s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -ms-transition: 0.3s;
+    -o-transition: 0.3s;
+}
+
+.navbar-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transition: transform 0.3s ease;
+    -webkit-transition: transform 0.3s ease;
+    -moz-transition: transform 0.3s ease;
+    -ms-transition: transform 0.3s ease;
+    -o-transition: transform 0.3s ease;
+}
+
+.navbar-menu li {
+    margin-left: 20px;
+}
+
+.navbar-menu a {
+    color: black;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+    font-family: "Poppins", sans-serif;
+    transition: background-color 0.3s, transform 0.3s;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-transition: background-color 0.3s, transform 0.3s;
+    -moz-transition: background-color 0.3s, transform 0.3s;
+    -ms-transition: background-color 0.3s, transform 0.3s;
+    -o-transition: background-color 0.3s, transform 0.3s;
+}
+
+.navbar-menu a:hover {
+    background-color: #575757;
+    transform: translateY(-2px);
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+
+    .navbar-menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: linear-gradient(145deg, #e2e8ec, #ffffff);
+        box-shadow: 4px 4px 8px #cbcbcb, 4px -4px 8px #ffffff;
+        position: absolute;
+        top: 85px;
+        left: 0;
+        height: 90vh;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+        line-height: 50px;
+    }
+
+    .navbar-menu.active {
+        display: flex;
+    }
+
+    .navbar-menu li {
+        margin: 0;
+        text-align: center;
+        height: 100%;
+    }
+
+    .navbar-menu a {
+        padding: 28px;
+    }
+
+    .navbar-menu a:hover {
+        background-color: #575757;
+        transform: translateY(-2px);
+        -webkit-transform: translateY(-2px);
+        -moz-transform: translateY(-2px);
+        -ms-transform: translateY(-2px);
+        -o-transform: translateY(-2px);
+        padding: 8px;
+    }
+    #dropdown {
+        position: relative;
+        left: 15px;
+        background-color: #67717a3d;
+    }
+    #dropdown:hover {
+        background-color: #575757;
+        transform: translateY(-3px);
+        -webkit-transform: translateY(-3px);
+        -moz-transform: translateY(-3px);
+        -ms-transform: translateY(-3px);
+        -o-transform: translateY(-3px);
+    }
+}
+
+
+
+#navbar-menu li a:hover {
+    color: white;
+}
+
+#byname {
+    text-decoration: none;
+    font-size: 15x;
+    font-family: serif;
+}
+
+.user-post {
+    margin-top: 1em;
+}
+
+#dashbor-btn:hover {
+    color: white;
+    background-color: black;
+    width: 100%;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+#dropdown {
+    margin-right: 33px;
+}
+#dropdown:hover {
+    background-color: #575757;
+    transform: translateY(-3px);
+    -webkit-transform: translateY(-3px);
+    -moz-transform: translateY(-3px);
+    -ms-transform: translateY(-3px);
+    -o-transform: translateY(-3px);
+}
+
+.container1 {
+    position: absolute;
+    top: 10%;
+    left: 15%;
+    display: flex;
+    width: 1000px;
+    box-shadow: 0 0px 8px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.welcome-panel {
+    flex: 1;
+    background: linear-gradient(135deg, #6d5b97, #6a3093);
+    background-image: url("/assets/com.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position-x: center;
+    color: rgb(19, 19, 81);
+    padding: 40px;
+    text-align: center;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.welcome-panel .logo {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.welcome-panel h1 {
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.welcome-panel p {
+    margin: 10px 0;
+}
+
+.website-link {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+.signin-panel {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-align: center;
+}
+
+.signin-panel h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 10px;
+    background: linear-gradient(to right, #ff0084, #33001b);
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.continue-btn:hover {
+    opacity: 0.9;
+}
+
+.social-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    color: white;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.twitter-btn {
+    background: #1da1f2;
+}
+
+.facebook-btn {
+    background: #3b5998;
+}
+
+.social-btn:hover {
+    opacity: 0.9;
+}
+
+.google-png img {
+    position: relative;
+    right: 2vh;
+    width: 20px;
+    height: 20px;
+}
+.sign_up {
+    text-decoration: none;
+    color: white;
+}
+
+.sign_up:hover {
+    color: white;
+}
+
+.home-p {
+    text-align: center;
+    text-transform: uppercase;
+    color: rgb(16, 16, 16);
+    font-weight: bold;
+    font-size: 60px;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.post-card {
+    margin: 0 30px;
+}
+
+.post-container {
+    width: 100%;
+}
+
+.post-card {
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: none;
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 4px 4px 8px #cbcbcb, 4px -4px 8px #ffffff;
+}
+
+#textarea {
+    width: 100%;
+    height: 160px;
+}
+
+.submit {
+    width: 60%;
+    color: light;
+    height: 40px;
+    background-color: #ff014f;
+}
+
+.submit:hover {
+    height: 40px;
+    color: #ff014f;
+    transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -ms-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+}
+
+.create-container {
+    height: 70vh;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #e2e8ec, #ffffff);
+    box-shadow: 4px 4px 8px #cbcbcb, 4px -4px 8px #ffffff;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+.create-container input {
+    border-radius: 5px;
+    background-color: white;
+    color: black;
+    -webkit-border-radius: ;
+    -moz-border-radius: ;
+    -ms-border-radius: ;
+    -o-border-radius: ;
+}
+
+.create-container textarea {
+    color: rgb(0, 0, 0);
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.create-container p {
+    font-size: 20px;
+}
+.h1-user {
+    font-size: 10px;
+}
+
+@media only screen and (max-width: 768px) {
+    .create-container {
+        position: relative;
+        top: -40px;
+        height: 85vh;
+    }
+
+    .up {
+        display: none;
+    }
+    .down {
+        display: none;
+    }
+
+    .text {
+        font-size: 30px;
+    }
+
+}
+
+@media only screen and (max-width: 1040px) {
+    .up {
+        position: absolute;
+        top: 43%;
+        left: 20%;
+        animation: Up 6s infinite linear;
+        transition: all 16s ease;
+        -webkit-transition: ;
+        -moz-transition: ;
+        -ms-transition: ;
+        -o-transition: ;
+        -webkit-animation: Up 6s infinite linear;
+    }
+    .down {
+        position: absolute;
+        top: 60%;
+        left: 20%;
+        animation: down 6s infinite linear;
+        transition: all 16s ease;
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 20%;
+        color: white;
+        text-transform: uppercase;
+        font-size: 3em;
+        font-family: "Times New Roman", Times, serif;
+        animation: shake 0.5s ease-in-out infinite;
+        -webkit-animation: ;
+    }
+}
+@keyframes Up {
+    0% {
+        right: 40%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 37%;
+    }
+
+    from {
+        color: black;
+    }
+
+    to {
+        color: green;
+    }
+}
+
+@keyframes down {
+    0% {
+        right: 0;
+    }
+    50% {
+        left: 47%;
+    }
+
+    100% {
+        left: 0;
+    }
+    from {
+        color: black;
+    }
+    to {
+        color: red;
+    }
+}
+
+@media only screen and (max-width: 995px) {
+    .up {
+        position: absolute;
+        top: 43%;
+        left: 20%;
+        animation: Up 6s infinite linear;
+        transition: all 16s ease;
+        -webkit-transition: all 16s ease;
+        -moz-transition: all 16s ease;
+        -ms-transition: all 16s ease;
+        -o-transition: all 16s ease;
+        -webkit-animation: Up 6s infinite linear;
+    }
+    .down {
+        position: absolute;
+        top: 60%;
+        left: 20%;
+        animation: down 6s infinite linear;
+        transition: all 16s ease;
+        -webkit-animation: down 6s infinite linear;
+        -webkit-transition: all 16s ease;
+        -moz-transition: all 16s ease;
+        -ms-transition: all 16s ease;
+        -o-transition: all 16s ease;
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        text-transform: uppercase;
+        font-size: 3em;
+        font-family: "Times New Roman", Times, serif;
+        animation: shake 0.5s ease-in-out infinite;
+        -webkit-animation: shake 0.5s ease-in-out infinite;
+    }
+}
+@keyframes Up {
+    0% {
+        right: 40%;
+    }
+
+    50% {
+        left: 0;
+    }
+
+    100% {
+        left: 37%;
+    }
+
+    from {
+        color: black;
+    }
+
+    to {
+        color: blue;
+    }
+}
+
+@keyframes down {
+    0% {
+        right: 0;
+    }
+    50% {
+        left: 37%;
+    }
+
+    100% {
+        left: 0;
+    }
+    from {
+        color: rgb(116, 147, 223);
+    }
+    to {
+        color: orangered;
+    }
+}
+
+@media only screen and (max-width: 838px) {
+    .up {
+        position: absolute;
+        top: 43%;
+        left: 10%;
+        animation: Up 6s infinite linear;
+        transition: all 16s ease;
+        -webkit-transition: all 16s ease;
+        -moz-transition: all 16s ease;
+        -ms-transition: all 16s ease;
+        -o-transition: all 16s ease;
+        -webkit-animation: Up 6s infinite linear;
+    }
+    .down {
+        position: absolute;
+        top: 60%;
+        left: 10%;
+        animation: down 6s infinite linear;
+        transition: all 16s ease;
+        -webkit-animation: down 6s infinite linear;
+        -webkit-transition: all 16s ease;
+        -moz-transition: all 16s ease;
+        -ms-transition: all 16s ease;
+        -o-transition: all 16s ease;
+    }
+
+    .text {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        color: white;
+        text-transform: uppercase;
+        font-size: 3em;
+        font-family: "Times New Roman", Times, serif;
+        animation: shake 0.5s ease-in-out infinite;
+        -webkit-animation: shake 0.5s ease-in-out infinite;
+    }
+    @keyframes Up {
+        0% {
+            right: 40%;
+        }
+
+        50% {
+            left: 0;
+        }
+
+        100% {
+            left: 30%;
+        }
+
+        from {
+            color: white;
+        }
+
+        to {
+            color: green;
+        }
+    }
+
+    @keyframes down {
+        0% {
+            right: 0;
+        }
+        50% {
+            left: 30%;
+        }
+
+        100% {
+            left: 0;
+        }
+        from {
+            color: white;
+        }
+        to {
+            color: red;
+        }
+    }
+}
